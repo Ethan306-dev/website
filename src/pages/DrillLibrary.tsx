@@ -26,7 +26,7 @@ function formatDate(value: string) {
 }
 
 export function DrillLibrary() {
-  const { isAdmin } = useAuth()
+  const { isAdmin, openSignIn } = useAuth()
   const [drills, setDrills] = useState<DrillRecord[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -51,22 +51,24 @@ export function DrillLibrary() {
     if (isAdmin && pendingAdd) {
       setShowUpload(true)
       setPendingAdd(false)
-      requestAnimationFrame(() => {
-        document.getElementById('add-drill')?.scrollIntoView({ behavior: 'smooth' })
-      })
     }
   }, [isAdmin, pendingAdd])
+
+  useEffect(() => {
+    if (!showUpload) return
+    const timer = window.setTimeout(() => {
+      document.getElementById('add-drill')?.scrollIntoView({ behavior: 'smooth' })
+    }, 50)
+    return () => window.clearTimeout(timer)
+  }, [showUpload])
 
   function handleAddDrill() {
     if (isAdmin) {
       setShowUpload(true)
-      requestAnimationFrame(() => {
-        document.getElementById('add-drill')?.scrollIntoView({ behavior: 'smooth' })
-      })
       return
     }
     setPendingAdd(true)
-    window.dispatchEvent(new Event('306:admin-signin'))
+    openSignIn()
   }
 
   async function loadDrills() {
@@ -188,7 +190,7 @@ export function DrillLibrary() {
       {isAdmin && showUpload ? (
         <section className="section drill-upload" id="add-drill">
           <div className="section-inner">
-            <div className="reveal">
+            <div>
               <p className="section-label">Admin</p>
               <h2 className="section-title">Add a new drill</h2>
               <p className="section-lead">
@@ -197,7 +199,7 @@ export function DrillLibrary() {
               </p>
             </div>
 
-            <form className="upload-form reveal" onSubmit={handleUpload}>
+            <form className="upload-form" onSubmit={handleUpload}>
               <label className="field">
                 <span>Drill name</span>
                 <input

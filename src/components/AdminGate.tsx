@@ -2,8 +2,15 @@ import { useEffect, useId, useRef, useState, type FormEvent } from 'react'
 import { useAuth } from '../context/AuthContext'
 
 export function AdminGate() {
-  const { isAdmin, ready, signIn, signOut } = useAuth()
-  const [open, setOpen] = useState(false)
+  const {
+    isAdmin,
+    ready,
+    signInOpen,
+    openSignIn,
+    closeSignIn,
+    signIn,
+    signOut,
+  } = useAuth()
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -14,15 +21,9 @@ export function AdminGate() {
   useEffect(() => {
     const dialog = dialogRef.current
     if (!dialog) return
-    if (open && !dialog.open) dialog.showModal()
-    if (!open && dialog.open) dialog.close()
-  }, [open])
-
-  useEffect(() => {
-    const openSignIn = () => setOpen(true)
-    window.addEventListener('306:admin-signin', openSignIn)
-    return () => window.removeEventListener('306:admin-signin', openSignIn)
-  }, [])
+    if (signInOpen && !dialog.open) dialog.showModal()
+    if (!signInOpen && dialog.open) dialog.close()
+  }, [signInOpen])
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
@@ -30,7 +31,6 @@ export function AdminGate() {
     setPending(true)
     try {
       await signIn(username, password)
-      setOpen(false)
       setUsername('')
       setPassword('')
     } catch (err) {
@@ -40,35 +40,31 @@ export function AdminGate() {
     }
   }
 
-  if (!ready) {
-    return (
-      <button className="admin-btn" type="button" disabled>
-        Admin
-      </button>
-    )
-  }
-
-  if (isAdmin) {
-    return (
-      <button className="admin-btn is-live" type="button" onClick={signOut}>
-        Sign out
-      </button>
-    )
-  }
-
   return (
     <>
-      <button className="admin-btn" type="button" onClick={() => setOpen(true)}>
-        Admin
-      </button>
+      {ready ? (
+        isAdmin ? (
+          <button className="admin-btn is-live" type="button" onClick={signOut}>
+            Sign out
+          </button>
+        ) : (
+          <button className="admin-btn" type="button" onClick={openSignIn}>
+            Admin
+          </button>
+        )
+      ) : (
+        <button className="admin-btn" type="button" disabled>
+          Admin
+        </button>
+      )}
 
       <dialog
         ref={dialogRef}
         className="admin-dialog"
         aria-labelledby={titleId}
-        onClose={() => setOpen(false)}
+        onClose={closeSignIn}
         onClick={(event) => {
-          if (event.target === dialogRef.current) setOpen(false)
+          if (event.target === dialogRef.current) closeSignIn()
         }}
       >
         <form className="admin-form" onSubmit={handleSubmit}>
@@ -109,7 +105,7 @@ export function AdminGate() {
             <button
               className="btn btn-outline"
               type="button"
-              onClick={() => setOpen(false)}
+              onClick={closeSignIn}
             >
               Cancel
             </button>
