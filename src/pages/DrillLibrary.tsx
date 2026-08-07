@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useEffect, useMemo, useState, type FormEvent } from 'react'
+import { useEffect, useId, useMemo, useRef, useState, type FormEvent } from 'react'
 import { DifficultyMeter } from '../components/DifficultyMeter'
 import { useAuth } from '../context/AuthContext'
 import {
@@ -39,6 +39,9 @@ export function DrillLibrary() {
   const [notice, setNotice] = useState('')
   const [showUpload, setShowUpload] = useState(false)
   const [pendingAdd, setPendingAdd] = useState(false)
+  const dialogRef = useRef<HTMLDialogElement>(null)
+  const titleId = useId()
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     document.title = 'Drill Library — VolleyCanvas'
@@ -55,15 +58,21 @@ export function DrillLibrary() {
   }, [isAdmin, pendingAdd])
 
   useEffect(() => {
-    if (!showUpload) return
-    const timer = window.setTimeout(() => {
-      document.getElementById('add-drill')?.scrollIntoView({ behavior: 'smooth' })
-    }, 50)
-    return () => window.clearTimeout(timer)
+    const dialog = dialogRef.current
+    if (!dialog) return
+    if (showUpload && !dialog.open) dialog.showModal()
+    if (!showUpload && dialog.open) dialog.close()
   }, [showUpload])
+
+  function closeUpload() {
+    setShowUpload(false)
+    setUploadError('')
+  }
 
   function handleAddDrill() {
     if (isAdmin) {
+      setNotice('')
+      setUploadError('')
       setShowUpload(true)
       return
     }
@@ -130,6 +139,7 @@ export function DrillLibrary() {
       setName('')
       setDifficulty(3)
       setFile(null)
+      if (fileInputRef.current) fileInputRef.current.value = ''
       setNotice(
         'Drill saved. Click “Publish library file”, then replace public/drills/library.json and push to GitHub so everyone can download it.',
       )
@@ -145,14 +155,10 @@ export function DrillLibrary() {
     const next = drills.filter((drill) => drill.id !== id)
     setDrills(next)
     saveLocalLibrary({ drills: next })
-    setNotice(
-      'Drill removed locally. Publish the library file and push to update the live site for everyone.',
-    )
   }
 
   async function handlePublish() {
-    setNotice('')
-    // Prefer the current on-screen library (includes local edits).
+    setUploadError('')
     downloadLibraryFile({ drills })
     setNotice(
       'Downloaded library.json — replace public/drills/library.json in your project, commit, and push. After Vercel redeploys, everyone will see these drills.',
@@ -186,86 +192,6 @@ export function DrillLibrary() {
           </div>
         </div>
       </section>
-
-      {isAdmin && showUpload ? (
-        <section className="section drill-upload" id="add-drill">
-          <div className="section-inner">
-            <div>
-              <p className="section-label">Admin</p>
-              <h2 className="section-title">Add a new drill</h2>
-              <p className="section-lead">
-                Name it, set the difficulty, then publish the library file to
-                GitHub so anyone can download the drills.
-              </p>
-            </div>
-
-            <form className="upload-form" onSubmit={handleUpload}>
-              <label className="field">
-                <span>Drill name</span>
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(event) => setName(event.target.value)}
-                  placeholder="e.g. Serve receive — rotation 1"
-                  required
-                />
-              </label>
-
-              <div className="field">
-                <span>Difficulty</span>
-                <DifficultyMeter
-                  value={difficulty}
-                  interactive
-                  onChange={setDifficulty}
-                />
-              </div>
-
-              <label className="field">
-                <span>JSON file</span>
-                <input
-                  type="file"
-                  accept="application/json,.json"
-                  onChange={(event) => setFile(event.target.files?.[0] ?? null)}
-                  required
-                />
-              </label>
-
-              {file ? (
-                <p className="upload-file-meta">
-                  Selected: {file.name} · {formatBytes(file.size)}
-                </p>
-              ) : null}
-
-              {uploadError ? <p className="form-error">{uploadError}</p> : null}
-              {notice ? <p className="form-notice">{notice}</p> : null}
-
-              <div className="cta-row">
-                <button
-                  className="btn btn-dark"
-                  type="submit"
-                  disabled={uploadPending}
-                >
-                  {uploadPending ? 'Saving…' : 'Save drill'}
-                </button>
-                <button
-                  className="btn btn-outline"
-                  type="button"
-                  onClick={() => void handlePublish()}
-                >
-                  Publish library file
-                </button>
-                <button
-                  className="btn btn-outline"
-                  type="button"
-                  onClick={() => void handleResetLocal()}
-                >
-                  Reset local
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      ) : null}
 
       <section className="section drill-library">
         <div className="section-inner">
@@ -337,6 +263,102 @@ export function DrillLibrary() {
           </div>
         </div>
       </section>
+
+      <dialog
+        ref={dialogRef}
+        className="drill-dialog"
+        aria-labelledby={titleId}
+        onClose={closeUpload}
+        onClick={(event) => {
+          if (event.target === dialogRef.current) closeUpload()
+        }}
+      >
+        <form className="drill-dialog-form" onSubmit={handleUpload}>
+          <div className="drill-dialog-head">
+            <div>
+              <p className="section-label">Admin</p>
+              <h2 id={titleId}>Add a new drill</h2>
+            </div>
+            <button
+              className="drill-dialog-close"
+              type="button"
+              onClick={closeUpload}
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+
+          <p className="admin-form-lead">
+            Name it, set the difficulty, then publish the library file so anyone
+            can download it.
+          </p>
+
+          <label className="field">
+            <span>Drill name</span>
+            <input
+              type="text"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              placeholder="e.g. Serve receive — rotation 1"
+              required
+            />
+          </label>
+
+          <div className="field">
+            <span>Difficulty</span>
+            <DifficultyMeter
+              value={difficulty}
+              interactive
+              onChange={setDifficulty}
+            />
+          </div>
+
+          <label className="field">
+            <span>JSON file</span>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="application/json,.json"
+              onChange={(event) => setFile(event.target.files?.[0] ?? null)}
+              required
+            />
+          </label>
+
+          {file ? (
+            <p className="upload-file-meta">
+              Selected: {file.name} · {formatBytes(file.size)}
+            </p>
+          ) : null}
+
+          {uploadError ? <p className="form-error">{uploadError}</p> : null}
+          {notice ? <p className="form-notice">{notice}</p> : null}
+
+          <div className="cta-row">
+            <button
+              className="btn btn-dark"
+              type="submit"
+              disabled={uploadPending}
+            >
+              {uploadPending ? 'Saving…' : 'Save drill'}
+            </button>
+            <button
+              className="btn btn-outline"
+              type="button"
+              onClick={() => void handlePublish()}
+            >
+              Publish library file
+            </button>
+            <button
+              className="btn btn-outline"
+              type="button"
+              onClick={() => void handleResetLocal()}
+            >
+              Reset local
+            </button>
+          </div>
+        </form>
+      </dialog>
     </main>
   )
 }
