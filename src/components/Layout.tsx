@@ -30,7 +30,14 @@ export function Layout() {
       <ScrollManager />
       <header className="nav">
         <Link className="nav-mark" to="/" aria-label="306. home">
-          306.
+          <img
+            className="nav-logo"
+            src="/brand/306.png"
+            alt=""
+            width={36}
+            height={36}
+          />
+          <span>306.</span>
         </Link>
         <nav className="nav-links" aria-label="Primary">
           <Link to={onHome ? '/#work' : '/work/volleycanvas'}>Work</Link>
@@ -45,7 +52,14 @@ export function Layout() {
 
       <footer className="footer">
         <Link className="footer-mark" to="/">
-          306.
+          <img
+            className="footer-logo"
+            src="/brand/306.png"
+            alt=""
+            width={28}
+            height={28}
+          />
+          <span>306.</span>
         </Link>
         <nav className="footer-links" aria-label="Footer">
           <Link to="/work/volleycanvas">VolleyCanvas</Link>

@@ -19,21 +19,24 @@ export function VolleyCanvas() {
           <div className="hero-orb hero-orb-a" />
           <div className="work-stage product-hero-stage">
             <div className="work-stage-grid" />
-            <div className="work-phone">
-              <div className="work-phone-bar" />
-              <div className="work-phone-screen">
-                <div className="work-phone-title">VolleyCanvas</div>
-                <div className="work-phone-line" />
-                <div className="work-phone-line short" />
-                <div className="work-court-mini">
-                  <span className="work-dot" />
-                </div>
-              </div>
-            </div>
+            <img
+              className="work-app-icon"
+              src="/brand/volleycanvas.png"
+              alt=""
+              width={240}
+              height={240}
+            />
           </div>
         </div>
 
         <div className="product-hero-content">
+          <img
+            className="product-icon"
+            src="/brand/volleycanvas.png"
+            alt=""
+            width={72}
+            height={72}
+          />
           <p className="section-label product-hero-label">{c.eyebrow}</p>
           <h1 className="product-brand">{c.name}</h1>
           <p className="product-tagline">{c.tagline}</p>

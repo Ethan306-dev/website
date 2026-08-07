@@ -48,17 +48,13 @@ export function Home() {
           <div className="work-feature reveal">
             <div className="work-stage" aria-hidden="true">
               <div className="work-stage-grid" />
-              <div className="work-phone">
-                <div className="work-phone-bar" />
-                <div className="work-phone-screen">
-                  <div className="work-phone-title">VolleyCanvas</div>
-                  <div className="work-phone-line" />
-                  <div className="work-phone-line short" />
-                  <div className="work-court-mini">
-                    <span className="work-dot" />
-                  </div>
-                </div>
-              </div>
+              <img
+                className="work-app-icon"
+                src="/brand/volleycanvas.png"
+                alt=""
+                width={220}
+                height={220}
+              />
             </div>
 
             <div className="work-meta">
