@@ -1,6 +1,7 @@
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useReveal } from '../hooks/useReveal'
+import { AdminGate } from './AdminGate'
 
 function ScrollManager() {
   const { pathname, hash } = useLocation()
@@ -39,13 +40,16 @@ export function Layout() {
           />
           <span>306.</span>
         </Link>
-        <nav className="nav-links" aria-label="Primary">
-          <Link to={onHome ? '/#work' : '/work/volleycanvas'}>Work</Link>
-          <Link to="/about">About</Link>
-          <Link className="nav-cta" to="/contact">
-            Contact
-          </Link>
-        </nav>
+        <div className="nav-right">
+          <nav className="nav-links" aria-label="Primary">
+            <Link to={onHome ? '/#work' : '/work/volleycanvas'}>Work</Link>
+            <Link to="/about">About</Link>
+            <Link className="nav-cta" to="/contact">
+              Contact
+            </Link>
+          </nav>
+          <AdminGate />
+        </div>
       </header>
 
       <Outlet />
@@ -63,6 +67,7 @@ export function Layout() {
         </Link>
         <nav className="footer-links" aria-label="Footer">
           <Link to="/work/volleycanvas">VolleyCanvas</Link>
+          <Link to="/work/volleycanvas/drills">Drill Library</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>

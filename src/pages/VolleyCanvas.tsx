@@ -50,9 +50,9 @@ export function VolleyCanvas() {
             >
               View on the App Store
             </a>
-            <a className="btn btn-ghost" href="#overview">
-              Read more
-            </a>
+            <Link className="btn btn-ghost" to="/work/volleycanvas/drills">
+              Drill Library
+            </Link>
           </div>
         </div>
       </section>
@@ -158,8 +158,8 @@ export function VolleyCanvas() {
             >
               Open App Store
             </a>
-            <Link className="btn btn-outline" to="/contact">
-              Talk to 306.
+            <Link className="btn btn-outline" to="/work/volleycanvas/drills">
+              Browse drills
             </Link>
           </div>
         </div>
