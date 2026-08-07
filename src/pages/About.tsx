@@ -35,8 +35,9 @@ export function About() {
               </p>
               <p>
                 Work spans marketing sites, mobile apps, and custom software.
-                Recent shipped work includes VolleyCanvas, a volleyball coaching
-                app on the App Store.
+                Recent shipped work includes VolleyCanvas — an iPhone and iPad
+                app for creating, animating, and sharing volleyball drills,
+                lineups, and match stats.
               </p>
               <p>
                 If you need something built properly — and want one person

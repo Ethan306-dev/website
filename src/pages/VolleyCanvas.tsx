@@ -72,8 +72,8 @@ export function VolleyCanvas() {
             <p className="section-label">Features</p>
             <h2 className="section-title">What coaches get.</h2>
             <p className="section-lead">
-              The tools that keep coaching visual, organized, and easy to share
-              with the team.
+              From animated drills and ball paths to lineups, rotations, and
+              match stats — everything built for coaching on a digital court.
             </p>
           </div>
 
@@ -143,7 +143,8 @@ export function VolleyCanvas() {
           <p className="section-label">Get the app</p>
           <h2 className="section-title">Available on the App Store.</h2>
           <p className="section-lead">
-            Download VolleyCanvas and start coaching with a clearer canvas.
+            Free on iPhone and iPad — create drills, animate plays, and coach
+            with a clearer court.
           </p>
           <div className="cta-row" style={{ marginTop: '1.75rem' }}>
             <a

@@ -4,57 +4,67 @@
  */
 export const volleyCanvasContent = {
   name: 'VolleyCanvas',
-  eyebrow: 'Product · iOS',
-  tagline: 'Coaching tools for the volleyball court.',
+  eyebrow: 'Product · iPhone & iPad',
+  tagline: 'Volleyball drills & plays — created, animated, and shared.',
   summary:
-    'VolleyCanvas helps coaches draw plays, plan sessions, and communicate tactics clearly — built by 306. and available on the App Store.',
+    'VolleyCanvas is a coaching board for creating, animating, and sharing volleyball drills on a digital court — built by 306. and free on the App Store.',
 
   overview: [
-    'VolleyCanvas is a volleyball coaching app designed to make tactical communication fast and visual. Instead of whiteboard photos and scattered notes, coaches get a focused canvas for plays, drills, and session planning.',
-    // Add more overview paragraphs below:
-    // '…',
+    'Bring volleyball ideas to life with VolleyCanvas — the coaching board designed to help coaches and players create, animate, and share drills with ease. Whether you’re planning the next training session, explaining rotations, or demonstrating complex offensive systems, it gives you an intuitive way to visualise tactics on a digital court.',
+    'Designed for coaches of all levels — from grassroots clubs to university and competitive teams — VolleyCanvas makes tactical communication clearer, faster, and more engaging. Use it from the sideline, at home, or during video review, with your drills organised and ready whenever you need them.',
   ],
 
   highlights: [
     {
-      title: 'Draw plays',
-      body: 'Sketch formations, movement, and rotations on a court canvas coaches and players can read at a glance.',
+      title: 'Animate drills',
+      body: 'Create unlimited animated volleyball drills with multi-step playback — play, pause, loop, and step through sequences while you coach.',
     },
     {
-      title: 'Plan sessions',
-      body: 'Structure training with drills and notes that stay organized from warm-up through match prep.',
+      title: 'Draw movement & ball paths',
+      body: 'Drag players anywhere on the court, then draw movement paths and ball trajectories so every rotation and system is easy to follow.',
     },
     {
-      title: 'Share clearly',
-      body: 'Hand players a clear picture of the plan — less confusion, more time on the court.',
+      title: 'Build lineups & rotations',
+      body: 'Create teams, manage player info and positions, generate lineups automatically, and configure serve-receive formations and rotations.',
     },
-    // Add more highlights:
-    // { title: '…', body: '…' },
+    {
+      title: 'Plan & organise sessions',
+      body: 'Save drills and training sessions, use court arrows, zones, labels, and step notes, and keep presets ready for practice.',
+    },
+    {
+      title: 'Track match stats',
+      body: 'Log points, rotations, and player actions with score tracking, history, reports, CSV export, and heatmap support.',
+    },
+    {
+      title: 'Import, export & customise',
+      body: 'Move drills, rosters, practice plans, and reports in and out of the app, with settings for appearance, language, and playback.',
+    },
   ],
 
   details: [
     {
-      heading: 'Built for coaches',
-      body: 'VolleyCanvas is shaped around real coaching workflows: quick mark-up between drills, clearer explanations in timeouts, and a shared visual language for the team.',
+      heading: 'A full coaching workflow',
+      body: 'Court Planner brings drill planning, lineup building, and stats tracking into one place — so you can design the session, show the play, and review performance without jumping between tools.',
     },
     {
-      heading: 'Designed to stay out of the way',
-      body: 'The interface stays simple so the focus stays on the court. Fast input, readable diagrams, and tools that support teaching instead of interrupting it.',
+      heading: 'Built for real teams',
+      body: 'Manage active and archived players, roles, and jersey numbers. Set primary and secondary positions, then generate lineups that match how your roster actually plays.',
     },
-    // Add more detail blocks:
-    // { heading: '…', body: '…' },
+    {
+      heading: 'Clearer than a whiteboard',
+      body: 'Animated multi-step plays beat static diagrams. Players see the movement, the ball path, and the timing — which makes rotations and offensive systems easier to teach and remember.',
+    },
   ],
 
   facts: [
-    { label: 'Platform', value: 'iOS · App Store' },
-    { label: 'Category', value: 'Sports · Coaching' },
+    { label: 'Platform', value: 'iPhone · iPad' },
+    { label: 'Category', value: 'Sports' },
+    { label: 'Price', value: 'Free · Pro upgrade' },
     { label: 'Studio', value: '306.' },
     { label: 'Creator', value: 'Ethan Weeks' },
-    // { label: '…', value: '…' },
   ],
 
-  // Optional longer notes — rendered if present
   notes: [
-    // 'Add release notes, roadmap items, or press blurbs here.',
+    'New features and improvements are continually added based on feedback from the volleyball community.',
   ] as string[],
 }

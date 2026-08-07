@@ -40,8 +40,8 @@ export function Home() {
             <p className="section-label">Selected work</p>
             <h2 className="section-title">Shipped and on the court.</h2>
             <p className="section-lead">
-              Products built end to end — from idea and interface to App Store
-              release.
+              Real products built end to end — including VolleyCanvas, a
+              volleyball coaching board live on the App Store.
             </p>
           </div>
 
@@ -64,14 +64,14 @@ export function Home() {
             <div className="work-meta">
               <h3>VolleyCanvas</h3>
               <p>
-                A volleyball coaching app for drawing plays, planning sessions,
-                and communicating tactics with clarity — available on the App
-                Store.
+                Create, animate, and share volleyball drills on a digital court
+                — player paths, ball trajectories, lineups, rotations, and
+                session planning for coaches at every level.
               </p>
               <div className="work-tags">
-                <span>iOS app</span>
-                <span>Sports coaching</span>
-                <span>Product design</span>
+                <span>iPhone & iPad</span>
+                <span>Drill animation</span>
+                <span>Lineups & stats</span>
               </div>
               <Link className="btn btn-dark" to="/work/volleycanvas">
                 View project
