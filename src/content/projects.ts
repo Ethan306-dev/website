@@ -5,6 +5,7 @@ export type Project = {
   tagline: string
   summary: string
   image: string
+  gallery?: { src: string; caption: string }[]
   tags: string[]
   overview: string[]
   highlights: { title: string; body: string }[]
@@ -21,15 +22,30 @@ export const projects: Project[] = [
     summary:
       'A data-driven football platform that turns thousands of global league data points into clear predictions, prop lines, and team insight.',
     image: '/projects/ace-stats.jpg',
-    tags: ['Football analytics', 'Betting tools', 'Dashboards'],
+    gallery: [
+      {
+        src: '/projects/ace-stats.jpg',
+        caption: 'Marketing site — product story, feature breakdown, and Discord CTA.',
+      },
+      {
+        src: '/projects/ace-stats-match.jpg',
+        caption:
+          'Live match view — scoreline, events, statistics bars, lineups, and player tabs.',
+      },
+    ],
+    tags: ['Football analytics', 'Betting tools', 'Live match stats'],
     overview: [
       'Ace Stats goes beyond basic scorelines. It harnesses thousands of data points from leagues across the globe to deliver insightful, predictive football statistics for bettors, fans, and analysts.',
-      'The draft brings together modelling, custom props, venue splits, and deep team/player dashboards in one focused product experience — constantly updated and built for precision.',
+      'Alongside the marketing site, the product includes a live match experience: league context, scoreline, venue and referee details, plus tabs for events, statistics, lineups, and players — with side-by-side comparison bars for shots, possession, cards, passes, and expected goals.',
     ],
     highlights: [
       {
         title: 'Advanced data modelling',
         body: 'Predictions shaped by form, league position, injuries, rivalries, and scheduling — context-aware rather than one-size-fits-all.',
+      },
+      {
+        title: 'Live match statistics',
+        body: 'A match modal with dual-team bars for shots, fouls, corners, possession, cards, saves, pass accuracy, and expected goals — updating through the game.',
       },
       {
         title: 'Custom prop lines',
@@ -52,6 +68,10 @@ export const projects: Project[] = [
       {
         heading: 'Built for the edge',
         body: 'Whether you’re a data-driven bettor, a fan wanting deeper insight, or someone checking a team’s form, Ace Stats is designed as a go-to tool — clear, predictive, and always updating.',
+      },
+      {
+        heading: 'From standings to the pitch',
+        body: 'The dashboard layers fixtures, league tables, and deep match breakdowns so users can move from overview to shot maps and pass metrics without leaving the flow.',
       },
       {
         heading: 'Community alongside the data',

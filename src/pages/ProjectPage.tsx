@@ -58,9 +58,18 @@ export function ProjectPage() {
         <div className="section-inner reveal">
           <p className="section-label">Draft</p>
           <h2 className="section-title">Website preview.</h2>
-          <figure className="project-preview-frame">
-            <img src={project.image} alt={`${project.name} website draft`} />
-          </figure>
+          <div className="project-preview-stack">
+            {(project.gallery ?? [{ src: project.image, caption: '' }]).map(
+              (item) => (
+                <figure className="project-preview-frame" key={item.src}>
+                  <img src={item.src} alt={`${project.name} website draft`} />
+                  {item.caption ? (
+                    <figcaption>{item.caption}</figcaption>
+                  ) : null}
+                </figure>
+              ),
+            )}
+          </div>
         </div>
       </section>
 

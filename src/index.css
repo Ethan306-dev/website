@@ -969,8 +969,14 @@ p {
   background: #e7f1ee;
 }
 
+.project-preview-stack {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1.75rem;
+}
+
 .project-preview-frame {
-  margin: 1.75rem 0 0;
+  margin: 0;
   overflow: hidden;
   background: var(--ink);
   border: 1px solid var(--line);
@@ -980,6 +986,14 @@ p {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.project-preview-frame figcaption {
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--line);
 }
 
 .work-tags {
