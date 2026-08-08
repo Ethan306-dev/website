@@ -31,7 +31,7 @@ export function Layout() {
         <Link className="nav-mark" to="/" aria-label="306. home">
           <img
             className="nav-logo"
-            src="/brand/306.png"
+            src="/brand/306-circle.png"
             alt=""
             width={36}
             height={36}
@@ -56,7 +56,7 @@ export function Layout() {
         <Link className="footer-mark" to="/">
           <img
             className="footer-logo"
-            src="/brand/306.png"
+            src="/brand/306-circle.png"
             alt=""
             width={28}
             height={28}
