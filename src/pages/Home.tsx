@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CONTACT_EMAIL } from '../constants'
+import { projects } from '../content/projects'
 
 export function Home() {
   return (
@@ -38,10 +39,10 @@ export function Home() {
         <div className="section-inner">
           <div className="reveal">
             <p className="section-label">Selected work</p>
-            <h2 className="section-title">Shipped and on the court.</h2>
+            <h2 className="section-title">Shipped and on the board.</h2>
             <p className="section-lead">
-              Real products built end to end — including VolleyCanvas, a
-              volleyball coaching board live on the App Store.
+              Products and website drafts — from App Store releases to local
+              business sites designed end to end.
             </p>
           </div>
 
@@ -72,6 +73,41 @@ export function Home() {
               <Link className="btn btn-dark" to="/work/volleycanvas">
                 View project
               </Link>
+            </div>
+          </div>
+
+          <div className="projects-block reveal" id="projects">
+            <div className="projects-block-head">
+              <p className="section-label">Projects</p>
+              <h3 className="projects-heading">Website drafts</h3>
+              <p className="section-lead">
+                Recent web concepts for sports data, automotive, cleaning, and
+                hospitality brands.
+              </p>
+            </div>
+
+            <div className="project-index">
+              {projects.map((project) => (
+                <Link
+                  className="project-index-item"
+                  key={project.slug}
+                  to={`/work/${project.slug}`}
+                >
+                  <div className="project-index-media">
+                    <img src={project.image} alt="" />
+                  </div>
+                  <div className="project-index-copy">
+                    <h4>{project.name}</h4>
+                    <p>{project.summary}</p>
+                    <div className="work-tags">
+                      {project.tags.map((tag) => (
+                        <span key={tag}>{tag}</span>
+                      ))}
+                    </div>
+                    <span className="project-index-link">View project →</span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

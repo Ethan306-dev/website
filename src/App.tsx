@@ -4,6 +4,7 @@ import { About } from './pages/About'
 import { Contact } from './pages/Contact'
 import { DrillLibrary } from './pages/DrillLibrary'
 import { Home } from './pages/Home'
+import { ProjectPage } from './pages/ProjectPage'
 import { VolleyCanvas } from './pages/VolleyCanvas'
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="work/volleycanvas" element={<VolleyCanvas />} />
         <Route path="work/volleycanvas/drills" element={<DrillLibrary />} />
+        <Route path="work/:slug" element={<ProjectPage />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="*" element={<Navigate to="/" replace />} />

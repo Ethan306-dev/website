@@ -9,6 +9,10 @@ Website for **306.** — a solo development studio by Ethan Weeks, building web,
 | `/` | Home |
 | `/work/volleycanvas` | VolleyCanvas product page |
 | `/work/volleycanvas/drills` | VolleyCanvas Drill Library |
+| `/work/ace-stats` | Ace Stats website draft |
+| `/work/platinum-body-works` | Platinum Body Works website draft |
+| `/work/finishing-touch` | Finishing Touch by Gemma website draft |
+| `/work/rebeccas-tearooms` | Rebecca's Licensed Tearooms website draft |
 | `/about` | About |
 | `/contact` | Contact |
 

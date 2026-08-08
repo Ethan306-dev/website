@@ -23,8 +23,6 @@ function ScrollManager() {
 
 export function Layout() {
   const rootRef = useReveal()
-  const { pathname } = useLocation()
-  const onHome = pathname === '/'
 
   return (
     <div className="site" ref={rootRef}>
@@ -42,7 +40,7 @@ export function Layout() {
         </Link>
         <div className="nav-right">
           <nav className="nav-links" aria-label="Primary">
-            <Link to={onHome ? '/#work' : '/work/volleycanvas'}>Work</Link>
+            <Link to="/#work">Work</Link>
             <Link to="/about">About</Link>
             <Link className="nav-cta" to="/contact">
               Contact
@@ -66,8 +64,8 @@ export function Layout() {
           <span>306.</span>
         </Link>
         <nav className="footer-links" aria-label="Footer">
+          <Link to="/#work">Work</Link>
           <Link to="/work/volleycanvas">VolleyCanvas</Link>
-          <Link to="/work/volleycanvas/drills">Drill Library</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
