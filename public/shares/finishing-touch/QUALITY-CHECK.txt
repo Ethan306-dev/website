@@ -1,0 +1,16 @@
+Warning: Home / Ready for the next step? - The contact form still uses the default recipient email.
+Warning: Services / Local Footer - This section repeats copy already used on Home.
+Warning: Work / Consulting Nav - This section repeats copy already used on Services.
+Warning: Work / Before After Media - This visual section still uses generated placeholder art.
+Warning: Work / Have a project like this? - The contact form still uses the default recipient email.
+Warning: Work / Local Footer - This section repeats copy already used on Home.
+Warning: Location / Consulting Nav - This section repeats copy already used on Services.
+Warning: Location / Local Reviews - This section repeats copy already used on Home.
+Warning: Location / Local Offer - This section repeats copy already used on Home.
+Warning: Location / Service Area - This section repeats copy already used on Home.
+Warning: Location / Map Card - This section repeats copy already used on Home.
+Warning: Location / Need help choosing a time? - The contact form still uses the default recipient email.
+Warning: Location / Local Footer - This section repeats copy already used on Home.
+Warning: Contact / Consulting Nav - This section repeats copy already used on Services.
+Warning: Contact / Local Reviews - This section repeats copy already used on Home.
+Warning: Contact / Local Footer - This section repeats copy already used on Home.

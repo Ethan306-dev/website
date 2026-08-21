@@ -1,3 +1,36 @@
 {
-  "shares": []
+  "shares": [
+    {
+      "id": "16fcdeae-2eaa-4f5f-b9a9-84a535fad690",
+      "slug": "finishing-touch",
+      "title": "Finishing Touch",
+      "clientName": "Finishing Touch by Gemma",
+      "createdAt": "2026-08-21T16:02:28.478Z",
+      "updatedAt": "2026-08-21T16:02:40.277Z",
+      "pages": [
+        {
+          "path": "index.html",
+          "label": "Home"
+        },
+        {
+          "path": "contact.html",
+          "label": "Contact"
+        },
+        {
+          "path": "location.html",
+          "label": "Location"
+        },
+        {
+          "path": "services.html",
+          "label": "Services"
+        },
+        {
+          "path": "work.html",
+          "label": "Work"
+        }
+      ],
+      "defaultPage": "index.html",
+      "fileCount": 13
+    }
+  ]
 }
