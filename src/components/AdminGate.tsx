@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react'
 import { useAuth } from '../context/AuthContext'
 
@@ -44,9 +45,14 @@ export function AdminGate() {
     <>
       {ready ? (
         isAdmin ? (
-          <button className="admin-btn is-live" type="button" onClick={signOut}>
-            Sign out
-          </button>
+          <div className="admin-controls">
+            <Link className="admin-btn is-live" to="/admin/shares">
+              Shares
+            </Link>
+            <button className="admin-btn is-live" type="button" onClick={signOut}>
+              Sign out
+            </button>
+          </div>
         ) : (
           <button className="admin-btn" type="button" onClick={openSignIn}>
             Admin
@@ -71,7 +77,7 @@ export function AdminGate() {
           <p className="section-label">Admin</p>
           <h2 id={titleId}>Sign in</h2>
           <p className="admin-form-lead">
-            Upload VolleyCanvas drills to the public library.
+            Manage client preview links and VolleyCanvas drills.
           </p>
 
           <label className="field">

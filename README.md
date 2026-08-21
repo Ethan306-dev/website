@@ -42,14 +42,17 @@ npm run preview
 - Contact email + App Store link: `src/constants.ts`
 - VolleyCanvas copy (overview, features, details, facts, notes): `src/content/volleycanvas.ts`
 
-## Drill Library admin
+## Client shares
 
-No Vercel Pro / Blob required.
+Send a client a private preview link for a website you built for them.
 
-1. Click **Admin** (top right) and sign in.
-2. On `/work/volleycanvas/drills`, upload a JSON drill (name + difficulty).
-3. Click **Publish library file** to download `library.json`.
-4. Replace `public/drills/library.json` with that file, commit, and push.
-5. After Vercel redeploys, everyone can browse/download the drills.
+1. Sign in with **Admin** (top right).
+2. Open **Shares** → **New client share**.
+3. Add a title, client name, and upload a file or folder of the site.
+4. **Save share**, then **Publish zip**.
+5. Extract the zip into `public/shares/` so you get:
+   - `public/shares/manifest.json`
+   - `public/shares/{slug}/…` (the website files)
+6. Commit and push. Share: `https://your-domain/share/{slug}`
 
-Admin sign-in is client-side (simple gate, not secure).
+Published shares are public URLs (anyone with the link can open them).

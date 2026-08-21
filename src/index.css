@@ -171,6 +171,19 @@ p {
   color: var(--signal);
 }
 
+.admin-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-controls a.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .admin-dialog {
   width: min(92vw, 420px);
   margin: auto;
@@ -1608,4 +1621,220 @@ p {
   .hero-court {
     inset: 22% 6% 38% 28%;
   }
+}
+
+/* ——— Client shares ——— */
+.share-admin-hero {
+  background:
+    radial-gradient(ellipse 55% 50% at 90% 0%, rgba(31, 163, 122, 0.18), transparent 55%),
+    linear-gradient(160deg, #07151c 0%, #0b1f2a 50%, #123646 100%);
+}
+
+.share-admin {
+  background: var(--paper);
+}
+
+.share-admin-list {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.share-admin-item {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 900px) {
+  .share-admin-item {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+
+.share-admin-item h2 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.35rem;
+}
+
+.share-admin-item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.share-admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.share-dialog {
+  width: min(96vw, 920px);
+  max-height: min(92vh, 900px);
+  margin: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 24px 60px rgba(11, 31, 42, 0.28);
+  overflow: auto;
+}
+
+.share-dialog::backdrop {
+  background: rgba(7, 21, 28, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+.share-dialog-form {
+  display: grid;
+  gap: 1rem;
+  padding: 1.75rem;
+}
+
+.share-upload-row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .share-upload-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field select {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.65rem 0.8rem;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+
+.field-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.share-preview-frame {
+  border: 1px solid var(--line);
+  background: #fff;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.share-preview-frame iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+  background: #fff;
+}
+
+.share-shell {
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  background: #0b1f2a;
+  color: var(--mist);
+}
+
+.share-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem var(--gutter);
+  border-bottom: 1px solid rgba(232, 244, 242, 0.12);
+  background: rgba(7, 21, 28, 0.92);
+}
+
+.share-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.share-brand img {
+  border-radius: 50%;
+}
+
+.share-topbar-copy {
+  display: grid;
+  justify-items: end;
+  gap: 0.1rem;
+  text-align: right;
+}
+
+.share-topbar-copy strong {
+  font-family: var(--font-display);
+  font-size: 1rem;
+}
+
+.share-topbar-copy span {
+  color: rgba(232, 244, 242, 0.62);
+  font-size: 0.88rem;
+}
+
+.share-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.75rem var(--gutter);
+  border-bottom: 1px solid rgba(232, 244, 242, 0.1);
+  background: rgba(11, 31, 42, 0.96);
+}
+
+.share-page-tab {
+  min-height: 2.1rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(232, 244, 242, 0.2);
+  border-radius: 2px;
+  color: rgba(232, 244, 242, 0.78);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.share-page-tab.is-active,
+.share-page-tab:hover {
+  border-color: var(--signal);
+  color: var(--mist);
+  background: rgba(31, 163, 122, 0.16);
+}
+
+.share-stage {
+  min-height: 0;
+  background: #edf3f1;
+}
+
+.share-frame {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100svh - 7rem);
+  border: 0;
+  display: block;
+  background: #fff;
+}
+
+.share-status {
+  margin: 0;
+  padding: 3rem var(--gutter);
+  color: var(--ink);
+}
+
+.share-status-error {
+  color: #b42318;
+  font-weight: 600;
 }
