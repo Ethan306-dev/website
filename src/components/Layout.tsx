@@ -70,6 +70,7 @@ export function Layout() {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/Privacy">Privacy</Link>
+          <Link to="/copyright">Copyright</Link>
         </nav>
         <span>© {new Date().getFullYear()} Ethan Weeks</span>
       </footer>

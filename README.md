@@ -17,6 +17,7 @@ Website for **306.** — a solo development studio by Ethan Weeks, building web,
 | `/about` | About |
 | `/contact` | Contact |
 | `/Privacy` | Privacy Policy |
+| `/copyright` | Copyright |
 
 ## Stack
 
