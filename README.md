@@ -7,6 +7,7 @@ Website for **306.** — a solo development studio by Ethan Weeks, building web,
 | Route | Page |
 | --- | --- |
 | `/` | Home |
+| `/work/scoretap` | ScoreTap spotlight app |
 | `/work/volleycanvas` | VolleyCanvas product page |
 | `/work/volleycanvas/drills` | VolleyCanvas Drill Library |
 | `/work/ace-stats` | Ace Stats website draft |
@@ -41,6 +42,8 @@ npm run preview
 
 - Contact email + App Store link: `src/constants.ts`
 - VolleyCanvas copy (overview, features, details, facts, notes): `src/content/volleycanvas.ts`
+- ScoreTap copy + promo slides: `src/content/scoretap.ts`
+- VolleyCanvas support & privacy: https://black-bush-f996.wzt8f7dg4r.workers.dev
 
 ## Client shares
 

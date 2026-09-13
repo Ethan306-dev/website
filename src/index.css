@@ -1488,6 +1488,212 @@ p {
     var(--mist);
 }
 
+/* ——— Spotlight (ScoreTap) ——— */
+.spotlight-feature {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  margin-top: clamp(2.75rem, 6vw, 4rem);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  align-items: center;
+  background:
+    radial-gradient(ellipse 70% 80% at 90% 20%, rgba(180, 255, 70, 0.12), transparent 50%),
+    linear-gradient(145deg, #070b12 0%, #101820 55%, #0a1218 100%);
+  color: var(--mist);
+}
+
+@media (min-width: 860px) {
+  .spotlight-feature {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+.spotlight-badge {
+  display: inline-block;
+  margin: 0 0 0.85rem;
+  padding: 0.28rem 0.7rem;
+  border: 1px solid rgba(180, 255, 70, 0.45);
+  color: #c8ff5a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.spotlight-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0.35rem 0 0.75rem;
+}
+
+.spotlight-lead {
+  max-width: 36rem;
+  margin: 0 0 1.25rem;
+  color: rgba(232, 244, 242, 0.82);
+  line-height: 1.55;
+}
+
+.spotlight-copy .section-label {
+  color: #c8ff5a;
+}
+
+.spotlight-copy .work-tags span {
+  border-color: rgba(180, 255, 70, 0.35);
+  color: rgba(232, 244, 242, 0.9);
+}
+
+.spotlight-copy .btn-outline {
+  border-color: rgba(232, 244, 242, 0.35);
+  color: var(--mist);
+}
+
+.spotlight-copy .btn-outline:hover {
+  background: rgba(232, 244, 242, 0.08);
+}
+
+.spotlight-visual {
+  position: relative;
+  min-height: clamp(220px, 36vw, 320px);
+  display: grid;
+  place-items: center;
+}
+
+.spotlight-logo {
+  width: min(70%, 220px);
+  aspect-ratio: 1;
+  border-radius: 28%;
+  object-fit: cover;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4);
+  animation: spotlight-float 7s var(--ease-out) infinite alternate;
+}
+
+.scoretap-hero-visual .work-stage,
+.scoretap-page .product-hero-stage {
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 20%, rgba(180, 255, 70, 0.22), transparent 55%),
+    linear-gradient(145deg, #070b12, #121a24 55%, #0a1018);
+}
+
+/* ——— Promo carousel ——— */
+.promo-section {
+  background:
+    linear-gradient(180deg, #e7f1ee 0%, var(--paper) 100%);
+}
+
+.promo-carousel {
+  margin-top: 1.75rem;
+  max-width: 520px;
+}
+
+.promo-carousel-frame {
+  position: relative;
+  overflow: hidden;
+  background: #0b1218;
+  aspect-ratio: 9 / 16;
+  max-height: min(72vh, 720px);
+}
+
+.promo-carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: promo-fade 0.55s var(--ease-out);
+}
+
+.promo-carousel-caption {
+  margin: 0.9rem 0 0;
+  color: var(--ink-muted, #4a5c58);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  max-width: 40rem;
+}
+
+.promo-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.promo-carousel-nav {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(11, 31, 42, 0.2);
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out);
+}
+
+.promo-carousel-nav:hover {
+  background: rgba(11, 31, 42, 0.06);
+  border-color: rgba(11, 31, 42, 0.4);
+}
+
+.promo-carousel-dots {
+  display: flex;
+  gap: 0.45rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.promo-carousel-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(11, 31, 42, 0.22);
+  cursor: pointer;
+}
+
+.promo-carousel-dot.is-active {
+  background: var(--green, #1fa37a);
+  transform: scale(1.15);
+}
+
+.scoretap-page .promo-carousel-dot.is-active {
+  background: #b4ff46;
+}
+
+/* ——— Support & privacy ——— */
+.support-section {
+  background:
+    radial-gradient(ellipse 50% 45% at 100% 0%, rgba(31, 163, 122, 0.12), transparent 55%),
+    var(--mist);
+}
+
+.support-list {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 800px) {
+  .support-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+.support-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  margin: 0 0 0.55rem;
+  letter-spacing: -0.02em;
+}
+
+.support-item p {
+  margin: 0 0 1.15rem;
+  color: var(--ink-muted, #4a5c58);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 800px) {
   .product-hero-stage {
     position: relative;
@@ -1515,6 +1721,29 @@ p {
     margin: 0;
     background: linear-gradient(180deg, transparent, #0b1f2a 18%);
     padding-top: 1.5rem;
+  }
+
+  .spotlight-logo {
+    animation: none;
+    transform: none;
+  }
+}
+
+@keyframes promo-fade {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spotlight-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
   }
 }
 
@@ -1594,7 +1823,9 @@ p {
   .brand,
   .hero-copy,
   .product-hero-stage,
-  .product-hero-content {
+  .product-hero-content,
+  .spotlight-logo,
+  .promo-carousel-image {
     animation: none !important;
   }
 

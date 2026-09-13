@@ -46,6 +46,40 @@ export function Home() {
             </p>
           </div>
 
+          <div className="spotlight-feature reveal" id="spotlight">
+            <div className="spotlight-copy">
+              <p className="section-label">Spotlight app</p>
+              <h3 className="spotlight-title">ScoreTap</h3>
+              <p className="spotlight-lead">
+                Score every point. A multi-sport scoring app for padel, tennis,
+                badminton, volleyball, and more — set up in seconds, play
+                together, and track progress.
+              </p>
+              <div className="work-tags">
+                <span>iPhone</span>
+                <span>Live scoring</span>
+                <span>Multi-sport</span>
+              </div>
+              <div className="cta-row">
+                <Link className="btn btn-dark" to="/work/scoretap">
+                  View ScoreTap
+                </Link>
+                <Link className="btn btn-outline" to="/work/scoretap#promo">
+                  See promo
+                </Link>
+              </div>
+            </div>
+            <div className="spotlight-visual" aria-hidden="true">
+              <img
+                className="spotlight-logo"
+                src="/brand/scoretap.png"
+                alt=""
+                width={220}
+                height={220}
+              />
+            </div>
+          </div>
+
           <div className="work-feature reveal">
             <div className="work-stage" aria-hidden="true">
               <div className="work-stage-grid" />

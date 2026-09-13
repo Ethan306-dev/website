@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
-import { VOLLEYCANVAS_URL } from '../constants'
+import { PromoCarousel } from '../components/PromoCarousel'
+import {
+  CONTACT_EMAIL,
+  VOLLEYCANVAS_SUPPORT_URL,
+  VOLLEYCANVAS_URL,
+} from '../constants'
 import { volleyCanvasContent as c } from '../content/volleycanvas'
 
 export function VolleyCanvas() {
@@ -66,6 +71,21 @@ export function VolleyCanvas() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section promo-section" id="promo">
+        <div className="section-inner reveal">
+          <p className="section-label">Promo</p>
+          <h2 className="section-title">VolleyCanvas in focus.</h2>
+          <p className="section-lead">
+            Promotional frames for availability, rotations, and live match
+            stats.
+          </p>
+          <PromoCarousel
+            slides={c.promo}
+            label="VolleyCanvas promotional carousel"
+          />
         </div>
       </section>
 
@@ -140,6 +160,62 @@ export function VolleyCanvas() {
           </div>
         </section>
       )}
+
+      <section className="section support-section" id="support">
+        <div className="section-inner reveal">
+          <p className="section-label">Support & privacy</p>
+          <h2 className="section-title">Policies and help.</h2>
+          <p className="section-lead">
+            VolleyCanvas is designed to work offline. It does not require an
+            account, does not use analytics, and does not send your rosters,
+            drills, or settings to the developer.
+          </p>
+
+          <div className="support-list">
+            <article className="support-item">
+              <h3>Privacy notice</h3>
+              <p>
+                Read how VolleyCanvas stores information on your device, what
+                happens when you import or export files, and how to delete your
+                data.
+              </p>
+              <a
+                className="btn btn-dark"
+                href={VOLLEYCANVAS_SUPPORT_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open privacy notice
+              </a>
+            </article>
+            <article className="support-item">
+              <h3>Terms & conditions</h3>
+              <p>
+                Review the terms for using VolleyCanvas, including licence,
+                acceptable use, training safety, and limitation of liability.
+              </p>
+              <a
+                className="btn btn-outline"
+                href={VOLLEYCANVAS_SUPPORT_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open terms
+              </a>
+            </article>
+            <article className="support-item">
+              <h3>Contact support</h3>
+              <p>
+                For privacy, terms, or app support questions, email 306. and
+                include VolleyCanvas in the subject.
+              </p>
+              <a className="btn btn-outline" href={`mailto:${CONTACT_EMAIL}?subject=VolleyCanvas%20support`}>
+                Email {CONTACT_EMAIL}
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
 
       <section className="section product-cta">
         <div className="section-inner reveal">

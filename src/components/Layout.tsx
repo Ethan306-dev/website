@@ -65,6 +65,7 @@ export function Layout() {
         </Link>
         <nav className="footer-links" aria-label="Footer">
           <Link to="/#work">Work</Link>
+          <Link to="/work/scoretap">ScoreTap</Link>
           <Link to="/work/volleycanvas">VolleyCanvas</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
