@@ -72,17 +72,20 @@ export const volleyCanvasContent = {
     {
       src: '/promo/volleycanvas/01-ready.jpg',
       alt: 'VolleyCanvas promotional art for player availability',
-      caption: 'Know who’s ready — track availability and move into lineup decisions faster.',
+      title: 'Know who’s ready',
+      body: 'Track player availability, mark attendance, and move from planning into lineup decisions faster.',
     },
     {
       src: '/promo/volleycanvas/02-rotations.jpg',
       alt: 'VolleyCanvas promotional art for court rotations',
-      caption: 'Visualise every rotation — drills, movement, and tactics on a digital court.',
+      title: 'Visualise every rotation',
+      body: 'Build drills, map movements, and show tactics clearly on a digital volleyball court.',
     },
     {
       src: '/promo/volleycanvas/03-stats.jpg',
       alt: 'VolleyCanvas promotional art for live match stats',
-      caption: 'Track match stats live — points, rotations, and player performance as the game unfolds.',
+      title: 'Track match stats live',
+      body: 'Capture points, rotations, and player performance while the match is still unfolding.',
     },
   ],
 }

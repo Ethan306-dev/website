@@ -69,6 +69,7 @@ export function Layout() {
           <Link to="/work/volleycanvas">VolleyCanvas</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+          <Link to="/Privacy">Privacy</Link>
         </nav>
         <span>© {new Date().getFullYear()} Ethan Weeks</span>
       </footer>

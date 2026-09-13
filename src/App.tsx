@@ -8,6 +8,7 @@ import { Home } from './pages/Home'
 import { ProjectPage } from './pages/ProjectPage'
 import { ScoreTap } from './pages/ScoreTap'
 import { ShareViewer } from './pages/ShareViewer'
+import { Privacy } from './pages/Privacy'
 import { VolleyCanvas } from './pages/VolleyCanvas'
 
 export default function App() {
@@ -23,6 +24,8 @@ export default function App() {
         <Route path="admin/shares" element={<AdminShares />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="Privacy" element={<Privacy />} />
+        <Route path="privacy" element={<Navigate to="/Privacy" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

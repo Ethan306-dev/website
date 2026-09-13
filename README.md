@@ -16,6 +16,7 @@ Website for **306.** — a solo development studio by Ethan Weeks, building web,
 | `/work/rebeccas-tearooms` | Rebecca's Licensed Tearooms website draft |
 | `/about` | About |
 | `/contact` | Contact |
+| `/Privacy` | Privacy Policy |
 
 ## Stack
 

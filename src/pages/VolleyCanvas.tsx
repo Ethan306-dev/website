@@ -78,10 +78,6 @@ export function VolleyCanvas() {
         <div className="section-inner reveal">
           <p className="section-label">Promo</p>
           <h2 className="section-title">VolleyCanvas in focus.</h2>
-          <p className="section-lead">
-            Promotional frames for availability, rotations, and live match
-            stats.
-          </p>
           <PromoCarousel
             slides={c.promo}
             label="VolleyCanvas promotional carousel"

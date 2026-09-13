@@ -52,11 +52,12 @@ export function Home() {
               <h3 className="spotlight-title">ScoreTap</h3>
               <p className="spotlight-lead">
                 Score every point. A multi-sport scoring app for padel, tennis,
-                badminton, volleyball, and more — set up in seconds, play
-                together, and track progress.
+                badminton, volleyball, and more — set up in seconds, score from
+                iPhone or Apple Watch, play together, and track progress.
               </p>
               <div className="work-tags">
                 <span>iPhone</span>
+                <span>Apple Watch</span>
                 <span>Live scoring</span>
                 <span>Multi-sport</span>
               </div>
@@ -80,21 +81,20 @@ export function Home() {
             </div>
           </div>
 
-          <div className="work-feature reveal">
-            <div className="work-stage" aria-hidden="true">
-              <div className="work-stage-grid" />
+          <div className="spotlight-feature spotlight-feature--mirror reveal">
+            <div className="spotlight-visual" aria-hidden="true">
               <img
-                className="work-app-icon"
+                className="spotlight-logo"
                 src="/brand/volleycanvas.png"
                 alt=""
                 width={220}
                 height={220}
               />
             </div>
-
-            <div className="work-meta">
-              <h3>VolleyCanvas</h3>
-              <p>
+            <div className="spotlight-copy">
+              <p className="section-label">Shipped app</p>
+              <h3 className="spotlight-title">VolleyCanvas</h3>
+              <p className="spotlight-lead">
                 Create, animate, and share volleyball drills on a digital court
                 — player paths, ball trajectories, lineups, rotations, and
                 session planning for coaches at every level.
@@ -104,9 +104,14 @@ export function Home() {
                 <span>Drill animation</span>
                 <span>Lineups & stats</span>
               </div>
-              <Link className="btn btn-dark" to="/work/volleycanvas">
-                View project
-              </Link>
+              <div className="cta-row">
+                <Link className="btn btn-dark" to="/work/volleycanvas">
+                  View VolleyCanvas
+                </Link>
+                <Link className="btn btn-outline" to="/work/volleycanvas#promo">
+                  See promo
+                </Link>
+              </div>
             </div>
           </div>
 

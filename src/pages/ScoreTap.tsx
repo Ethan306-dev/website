@@ -69,10 +69,6 @@ export function ScoreTap() {
         <div className="section-inner reveal">
           <p className="section-label">Promo</p>
           <h2 className="section-title">ScoreTap in motion.</h2>
-          <p className="section-lead">
-            Promotional frames for scoring, player setup, multi-sport support,
-            and the home dashboard.
-          </p>
           <PromoCarousel slides={c.promo} label="ScoreTap promotional carousel" />
         </div>
       </section>

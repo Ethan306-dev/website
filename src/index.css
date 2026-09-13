@@ -1287,6 +1287,51 @@ p {
   font-size: 1.1rem;
 }
 
+.privacy-body {
+  background:
+    linear-gradient(180deg, var(--paper) 0%, #e7f1ee 100%);
+}
+
+.privacy-body .section-inner.narrow {
+  max-width: 44rem;
+}
+
+.legal-prose {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.legal-prose h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 1.75rem 0 0.15rem;
+}
+
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+
+.legal-prose p,
+.legal-prose li {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.legal-prose ul {
+  margin: 0.15rem 0 0.35rem;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.legal-prose strong {
+  color: var(--ink);
+}
+
 /* ——— Product / VolleyCanvas ——— */
 .product-hero {
   position: relative;
@@ -1488,7 +1533,7 @@ p {
     var(--mist);
 }
 
-/* ——— Spotlight (ScoreTap) ——— */
+/* ——— Spotlight apps ——— */
 .spotlight-feature {
   display: grid;
   gap: clamp(1.75rem, 4vw, 3rem);
@@ -1501,9 +1546,19 @@ p {
   color: var(--mist);
 }
 
+.spotlight-feature--mirror {
+  background:
+    radial-gradient(ellipse 70% 80% at 10% 20%, rgba(31, 163, 122, 0.22), transparent 50%),
+    linear-gradient(145deg, #0b1f2a 0%, #184455 55%, #0f2d38 100%);
+}
+
 @media (min-width: 860px) {
   .spotlight-feature {
     grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .spotlight-feature--mirror {
+    grid-template-columns: 0.9fr 1.1fr;
   }
 }
 
@@ -1538,9 +1593,17 @@ p {
   color: #c8ff5a;
 }
 
+.spotlight-feature--mirror .spotlight-copy .section-label {
+  color: #7dd9b5;
+}
+
 .spotlight-copy .work-tags span {
   border-color: rgba(180, 255, 70, 0.35);
   color: rgba(232, 244, 242, 0.9);
+}
+
+.spotlight-feature--mirror .spotlight-copy .work-tags span {
+  border-color: rgba(125, 217, 181, 0.4);
 }
 
 .spotlight-copy .btn-outline {
@@ -1582,8 +1645,23 @@ p {
 }
 
 .promo-carousel {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.75rem);
   margin-top: 1.75rem;
-  max-width: 520px;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .promo-carousel {
+    grid-template-columns: minmax(240px, 340px) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+.promo-carousel-media {
+  width: 100%;
+  max-width: 340px;
+  margin-inline: auto;
 }
 
 .promo-carousel-frame {
@@ -1591,7 +1669,6 @@ p {
   overflow: hidden;
   background: #0b1218;
   aspect-ratio: 9 / 16;
-  max-height: min(72vh, 720px);
 }
 
 .promo-carousel-image {
@@ -1602,12 +1679,84 @@ p {
   animation: promo-fade 0.55s var(--ease-out);
 }
 
-.promo-carousel-caption {
-  margin: 0.9rem 0 0;
+.promo-carousel-info {
+  min-width: 0;
+  animation: promo-fade 0.45s var(--ease-out);
+}
+
+.promo-carousel-index {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green, #1fa37a);
+}
+
+.scoretap-page .promo-carousel-index {
+  color: #5a8a20;
+}
+
+.promo-carousel-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.promo-carousel-body {
+  margin: 0;
+  max-width: 34rem;
   color: var(--ink-muted, #4a5c58);
-  font-size: 0.95rem;
-  line-height: 1.45;
-  max-width: 40rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.promo-carousel-toc {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.promo-carousel-toc-btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: baseline;
+  text-align: left;
+  padding: 0.7rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(11, 31, 42, 0.12);
+  background: transparent;
+  color: var(--ink-muted, #4a5c58);
+  cursor: pointer;
+  font: inherit;
+  transition: color 0.2s var(--ease-out);
+}
+
+.promo-carousel-toc-btn:hover,
+.promo-carousel-toc-btn.is-active {
+  color: var(--ink);
+}
+
+.promo-carousel-toc-btn.is-active {
+  border-bottom-color: rgba(31, 163, 122, 0.45);
+}
+
+.scoretap-page .promo-carousel-toc-btn.is-active {
+  border-bottom-color: rgba(180, 255, 70, 0.55);
+}
+
+.promo-carousel-toc-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
 }
 
 .promo-carousel-controls {
